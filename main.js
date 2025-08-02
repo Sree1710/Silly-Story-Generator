@@ -37,7 +37,7 @@ function result() {
   const yItem = randomValueFromArray(insertY);
   const zItem = randomValueFromArray(insertZ);
 
-  // Replace placeholders — note: replace only replaces first occurrence, so use replaceAll or chain replace
+  // Replace placeholders
   newStory = newStory.replaceAll(':insertx:', xItem);
   newStory = newStory.replace(':inserty:', yItem);
   newStory = newStory.replace(':insertz:', zItem);
@@ -48,19 +48,15 @@ function result() {
     newStory = newStory.replace('Bob', name);
   }
 
-  // Check UK radio button, convert units if checked
+  // UK conversion
   if (document.getElementById('uk').checked) {
-    // Convert 300 pounds to stone (1 stone = 14 pounds)
     const weight = Math.round(300 / 14) + ' stone';
-    // Convert 94 fahrenheit to centigrade
     const temperature = Math.round((94 - 32) * 5 / 9) + ' centigrade';
-
-    // Replace in story
     newStory = newStory.replace('300 pounds', weight);
     newStory = newStory.replace('94 fahrenheit', temperature);
   }
 
-  // Display the new story in the <p> element
+  // Display the story
   story.textContent = newStory;
+  story.style.visibility = 'visible'; // << This was missing
 }
-
