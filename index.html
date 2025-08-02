@@ -4,12 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
 
-    <title>Silly story generator</title>
+    <title>Silly Story Generator</title>
 
     <style>
       body {
-        font-family: helvetica, sans-serif;
+        font-family: Helvetica, sans-serif;
         width: 350px;
+        margin: 30px auto;
       }
 
       label {
@@ -25,11 +26,12 @@
         width: 150px;
       }
 
-      p {
+      p.story {
         background: #ffc125;
         color: #5e2612;
         padding: 10px;
         visibility: hidden;
+        border-radius: 5px;
       }
     </style>
   </head>
@@ -39,17 +41,20 @@
       <label for="customname">Enter custom name:</label>
       <input id="customname" type="text" placeholder="" />
     </div>
+
     <div>
-      <label for="us">US</label
-      ><input id="us" type="radio" name="ukus" value="us" checked />
-      <label for="uk">UK</label
-      ><input id="uk" type="radio" name="ukus" value="uk" />
+      <label for="us">US</label>
+      <input id="us" type="radio" name="ukus" value="us" checked />
+      <label for="uk">UK</label>
+      <input id="uk" type="radio" name="ukus" value="uk" />
     </div>
+
     <div>
-      <button class="randomize">Generate random story</button>
+      <button class="randomize" type="button">Generate random story</button>
     </div>
-    <!-- Thanks a lot to Willy Aguirre for his help with the code for this assessment -->
+
     <p class="story"></p>
+
     <script src="main.js"></script>
   </body>
 </html>
