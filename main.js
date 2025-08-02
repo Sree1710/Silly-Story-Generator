@@ -32,23 +32,19 @@ randomize.addEventListener('click', result);
 function result() {
   let newStory = storyText;
 
-  // Pick random items for placeholders
   const xItem = randomValueFromArray(insertX);
   const yItem = randomValueFromArray(insertY);
   const zItem = randomValueFromArray(insertZ);
 
-  // Replace placeholders
   newStory = newStory.replaceAll(':insertx:', xItem);
   newStory = newStory.replace(':inserty:', yItem);
   newStory = newStory.replace(':insertz:', zItem);
 
-  // Replace 'Bob' with custom name if entered
   if (customName.value !== '') {
     const name = customName.value;
     newStory = newStory.replace('Bob', name);
   }
 
-  // UK conversion
   if (document.getElementById('uk').checked) {
     const weight = Math.round(300 / 14) + ' stone';
     const temperature = Math.round((94 - 32) * 5 / 9) + ' centigrade';
@@ -56,7 +52,7 @@ function result() {
     newStory = newStory.replace('94 fahrenheit', temperature);
   }
 
-  // Display the story
   story.textContent = newStory;
-  story.style.visibility = 'visible'; // << This was missing
+  story.style.visibility = 'visible';  // <-- Show the story
 }
+
